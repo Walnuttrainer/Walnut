@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>뿌링클 기프티콘 증정</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Noto Sans KR", sans-serif;
+      background: #fff7e9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .btn {
+      background: #ff8c00;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      font-weight: 700;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+    }
+    .btn:hover {
+      background: #ff7300;
+    }
+    /* ===== 모달 ===== */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 99;
+    }
+    .modal {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.28);
+      animation: pop 0.2s ease-out;
+    }
+    @keyframes pop {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .big-text {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: #d10000;
+      line-height: 1.4;
+    }
+    .close-btn {
+      margin-top: 10px;
+      padding: 10px 18px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      background: #ddd;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .demo-label {
+      position: fixed;
+      bottom: 10px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>뿌링클 콤보 기프티콘 도착! 🎉</h1>
+  <button class="btn" id="openBtn">선물 받으러 가기</button>
+
+  <!-- 모달 -->
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <div class="big-text">예주야<br>속여서 미안해 😅<br>너는 최고의 피실험자였어</div>
+      <button class="close-btn" id="closeBtn">닫기</button>
+    </div>
+  </div>
+
+  <div class="demo-label">※ 중독재활연구학회 연구팀 - 배워서 남 속이자</div>
+
+  <script>
+    const overlay = document.getElementById("overlay");
+    const openBtn = document.getElementById("openBtn");
+    const closeBtn = document.getElementById("closeBtn");
+
+    openBtn.onclick = () => {
+      overlay.style.display = "flex";
+    };
+
+    closeBtn.onclick = () => {
+      overlay.style.display = "none";
+    };
+
+    overlay.onclick = (e) => {
+      if (e.target === overlay) overlay.style.display = "none";
+    };
+  </script>
+
+</body>
+</html>
